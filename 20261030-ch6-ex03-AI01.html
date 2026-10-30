@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étoile Pâtisserie｜星辰精品甜點</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+
+    <style>
+        /* ===== 全站基本設定 ===== */
+        body {
+            background-color: #fff7f8;
+            color: #704653;
+            font-family: "微軟正黑體", sans-serif;
+        }
+
+        :root {
+            --pink-main: #d987a0;
+            --pink-light: #fce4eb;
+            --pink-dark: #a94f70;
+            --cream: #fffaf5;
+            --text-color: #704653;
+        }
+
+        /* ===== 共用方塊 ===== */
+        .box01 {
+            min-height: 160px;
+            font-size: 22px;
+            font-weight: 700;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        /* ===== Header ===== */
+        .header {
+            background-color: var(--cream);
+            border: 1px solid #f5d6df;
+            color: var(--pink-dark);
+            padding: 20px;
+            box-shadow: 0 3px 12px #e9b9c533;
+        }
+
+        .brand-title {
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .brand-subtitle {
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #b77b8c;
+        }
+
+        .nav-link {
+            color: #875264;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--pink-main);
+        }
+
+        /* ===== 商品卡片 ===== */
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #f3dce2;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 100%;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px #d99aab1a;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px #d99aab40;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 19px;
+            font-weight: 800;
+            color: #8f5065;
+            margin-bottom: 8px;
+        }
+
+        .product-desc {
+            font-size: 13px;
+            color: #a9858f;
+            min-height: 40px;
+        }
+
+        .product-price {
+            color: #bd607f;
+            font-size: 21px;
+            font-weight: 900;
+            margin: 10px 0;
+        }
+
+        .btn-pink {
+            background-color: var(--pink-main);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 8px 22px;
+            transition: 0.3s;
+        }
+
+        .btn-pink:hover {
+            background-color: var(--pink-dark);
+            color: white;
+        }
+
+        /* ===== 商品區標題 ===== */
+        .section-title {
+            color: #a94f70;
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .section-subtitle {
+            color: #bd91a0;
+            font-size: 13px;
+            letter-spacing: 3px;
+        }
+
+        /* ===== 人氣商品區 ===== */
+        .popular-box {
+            background-color: #f9e2e9;
+            color: #98546a;
+            border: 1px solid #f0cbd7;
+            padding: 15px;
+        }
+
+        .popular-number {
+            font-size: 35px;
+            font-weight: 900;
+            color: #d987a0;
+        }
+
+        /* ===== 優惠資訊區 ===== */
+        .info-box {
+            background-color: #fff;
+            border: 1px solid #f1d5de;
+            color: #995e70;
+            padding: 15px;
+        }
+
+        .info-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .info-title {
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .info-desc {
+            font-size: 12px;
+            color: #b18b96;
+            margin-top: 5px;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background-color: #a95773;
+            color: #fff5f7;
+            padding: 25px;
+        }
+
+        .footer-title {
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            line-height: 2;
+        }
+
+        /* ===== RWD 圖片調整 ===== */
+        @media (max-width: 576px) {
+            .brand-title {
+                font-size: 23px;
+            }
+
+            .product-img {
+                height: 160px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header 品牌區 -->
+        <div class="row">
+            <div class="col-12 mt-3 d-md-none d-lg-block">
+                <div class="header text-center">
+                    <div class="brand-title">
+                        Étoile Pâtisserie
+                    </div>
+
+                    <div class="brand-subtitle mt-1">
+                        星辰精品甜點・讓幸福甜入心
+                    </div>
+
+                    <nav class="nav justify-content-center mt-3">
+                        <a class="nav-link" href="#">首頁</a>
+                        <a class="nav-link" href="#products">精品蛋糕</a>
+                        <a class="nav-link" href="#popular">人氣推薦</a>
+                        <a class="nav-link" href="#service">購物服務</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第一排：六款精品蛋糕 -->
+        <div class="row" id="products">
+
+            <div class="col-12 mt-4 text-center">
+                <div class="section-title">OUR CAKE COLLECTION</div>
+                <div class="section-subtitle">精選每日手作・品味甜蜜時光</div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 col-xxl-2 mt-3">
+                <div class="product-card">
+                    <img src="images/cake01.jpg" class="product-img" alt="草莓鮮奶油蛋糕">
+                    <div class="product-content">
+                        <div class="product-name">草莓雲朵蛋糕</div>
+                        <div class="product-desc">新鮮草莓搭配細緻鮮奶油</div>
+                        <div class="product-price">$880</div>
+                        <button class="btn btn-pink">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 col-xxl-2 mt-3">
+                <div class="product-card">
+                    <img src="images/cake02.jpg" class="product-img" alt="巧克力蛋糕">
+                    <div class="product-content">
+                        <div class="product-name">濃情巧克力</div>
+                        <div class="product-desc">濃郁可可與絲滑巧克力慕斯</div>
+                        <div class="product-price">$980</div>
+                        <button class="btn btn-pink">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 col-xxl-2 mt-3">
+                <div class="product-card">
+                    <img src="images/cake03.jpg" class="product-img" alt="水果蛋糕">
+                    <div class="product-content">
+                        <div class="product-name">繽紛水果蛋糕</div>
+                        <div class="product-desc">多種新鮮水果與香甜蛋糕體</div>
+                        <div class="product-price">$1,080</div>
+                        <button class="btn btn-pink">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 col-xxl-2 mt-3">
+                <div class="product-card">
+                    <img src="images/cake04.jpg" class="product-img" alt="草莓慕斯蛋糕">
+                    <div class="product-content">
+                        <div class="product-name">粉紅草莓慕斯</div>
+                        <div class="product-desc">夢幻粉色外型與莓果香氣</div>
+                        <div class="product-price">$920</div>
+                        <button class="btn btn-pink">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 col-xxl-2 mt-3">
+                <div class="product-card">
+                    <img src="images/cake05.jpg" class="product-img" alt="精品奶油蛋糕">
+                    <div class="product-content">
+                        <div class="product-name">法式奶油蛋糕</div>
+                        <div class="product-desc">細膩奶香與優雅法式風味</div>
+                        <div class="product-price">$1,180</div>
+                        <button class="btn btn-pink">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 col-xxl-2 mt-3">
+                <div class="product-card">
+                    <img src="images/cake01.jpg" class="product-img" alt="經典草莓蛋糕">
+                    <div class="product-content">
+                        <div class="product-name">經典莓果蛋糕</div>
+                        <div class="product-desc">經典草莓與柔軟戚風蛋糕</div>
+                        <div class="product-price">$850</div>
+                        <button class="btn btn-pink">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 第二排：人氣推薦 -->
+        <div class="row mt-4" id="popular">
+
+            <div class="col-12 text-center mb-2">
+                <div class="section-title">BEST SELLER</div>
+                <div class="section-subtitle">本月人氣甜點推薦</div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 col-xxl-2 mt-3">
+                <div class="box01 popular-box">
+                    <div class="popular-number">01</div>
+                    <div>人氣冠軍</div>
+                    <small>草莓雲朵蛋糕</small>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 col-xxl-2 mt-3">
+                <div class="box01 popular-box">
+                    <div class="popular-number">02</div>
+                    <div>甜蜜首選</div>
+                    <small>濃情巧克力</small>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 col-xxl-2 mt-3">
+                <div class="box01 popular-box">
+                    <div class="popular-number">03</div>
+                    <div>清新風味</div>
+                    <small>繽紛水果蛋糕</small>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 col-xxl-2 mt-3">
+                <div class="box01 popular-box">
+                    <div class="popular-number">04</div>
+                    <div>夢幻推薦</div>
+                    <small>粉紅草莓慕斯</small>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 col-xxl-2 mt-3 d-none d-xxl-block">
+                <div class="box01 popular-box">
+                    <div class="popular-number">05</div>
+                    <div>法式經典</div>
+                    <small>法式奶油蛋糕</small>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 col-xxl-2 mt-3 d-none d-xxl-block">
+                <div class="box01 popular-box">
+                    <div class="popular-number">06</div>
+                    <div>每日手作</div>
+                    <small>幸福甜點系列</small>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 第三排：購物服務與品牌特色 -->
+        <div class="row mt-4" id="service">
+
+            <div class="col-12 text-center mb-2">
+                <div class="section-title">OUR SERVICE</div>
+                <div class="section-subtitle">用心製作每一份幸福</div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="box01 info-box">
+                    <div class="info-icon">🎂</div>
+                    <div class="info-title">每日新鮮手作</div>
+                    <div class="info-desc">嚴選食材・每日限量製作</div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="box01 info-box">
+                    <div class="info-icon">🎁</div>
+                    <div class="info-title">精美禮盒包裝</div>
+                    <div class="info-desc">讓每份心意都更加珍貴</div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="box01 info-box">
+                    <div class="info-icon">🚚</div>
+                    <div class="info-title">低溫配送服務</div>
+                    <div class="info-desc">冷藏配送・守護甜點品質</div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="box01 info-box">
+                    <div class="info-icon">💗</div>
+                    <div class="info-title">客製化生日蛋糕</div>
+                    <div class="info-desc">為重要日子留下甜蜜回憶</div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="box01 info-box">
+                    <div class="info-icon">🌷</div>
+                    <div class="info-title">精選天然食材</div>
+                    <div class="info-desc">用心挑選優質原料</div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="box01 info-box">
+                    <div class="info-icon">✨</div>
+                    <div class="info-title">法式甜點工藝</div>
+                    <div class="info-desc">細膩工法打造優雅風味</div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="box01 info-box">
+                    <div class="info-icon">💳</div>
+                    <div class="info-title">便利線上訂購</div>
+                    <div class="info-desc">輕鬆選購喜愛的甜點</div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="box01 info-box">
+                    <div class="info-icon">💌</div>
+                    <div class="info-title">貼心售後服務</div>
+                    <div class="info-desc">用心回應每一份需求</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer 品牌資訊 -->
+        <div class="row">
+            <div class="col-12 mt-3 d-none d-md-block">
+                <div class="footer text-center">
+                    <div class="footer-title">
+                        Étoile Pâtisserie
+                    </div>
+
+                    <div class="footer-text mt-2">
+                        星辰精品甜點｜為生活增添一點甜
+                        <br>
+                        營業時間：週二至週日 10:00－20:00
+                        <br>
+                        客服信箱：service@etoile-cake.com
+                        <br>
+                        Copyright © 2026 Étoile Pâtisserie All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

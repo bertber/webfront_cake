@@ -1,0 +1,177 @@
+body {
+    background-color: var(--bg002);
+}
+
+.wrapper {
+    width: 1024px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: -4px -4px 10px 2px #1b1b1b;
+}
+
+.logo {
+    width: 1024px;
+    height: 120px;
+    background-color: #ca5151;
+    background-image: url(../images/land02.avif);
+    background-position: center center;
+    background-size: cover;
+}
+
+nav {
+    background-color: aqua;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 5px;
+}
+
+nav ul {
+    display: inline-block;
+}
+
+nav ul li {
+    float: left;
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    background-color: var(--btn002);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 5px;
+    color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px #ccc;
+}
+
+nav ul li a:hover {
+    box-shadow: 2px 2px 2px 2px #353434;
+    background-color: var(--btn001hover);
+}
+
+.content {
+    background-color: rgb(201, 182, 158);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.content h1 {
+    text-align: center;
+    font-size: 48px;
+    color: rgb(20, 65, 189);
+    margin-bottom: 15px;
+}
+
+.content .box01 {
+    width: 49%;
+    height: 160px;
+    background-color: var(--bg002);
+    background-image: url(../images/land03.avif);
+    background-position: center center;
+    background-size: cover;
+    float: left;
+}
+
+.content .box02 {
+    width: 49%;
+    height: 160px;
+    background-color: var(--bg002);
+    background-image: url(../images/land04.avif);
+    background-position: center center;
+    background-size: cover;
+    float: left;
+}
+
+.content p {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--text001);
+}
+
+.content a {
+    display: block;
+    background-color: var(--btn001);
+    width: 120px;
+    height: 40px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.content a:hover {
+    box-shadow: 2px 2px 2px 2px #464545;
+    background-color: var(--btn001hover);
+}
+
+.footer {
+    background-color: rgb(2, 95, 95);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: azure;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        width: 95%;
+    }
+
+    .banner .logo {
+        width: 100%;
+        height: 100px;
+        background-color: #f5abab;
+        background-image: url(../images/land03.avif);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner .logo {
+        background-image: url(../images/land04.avif);
+    }
+
+    nav ul {
+        display: block;
+    }
+
+    nav ul li {
+        float: none;
+        margin-bottom: 5px;
+    }
+
+    nav ul li a {
+        display: block;
+        background-color: #111fd8;
+        margin-right: 10px;
+        margin-left: 5px;
+        border-radius: 0;
+    }
+
+    .content .box01 {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 15px;
+    }
+
+    .content .box02 {
+        width: 100%;
+        height: 200px;
+    }
+}
